@@ -1,0 +1,9 @@
+# WAF secured host
+# 講師の指示に従って、ホスト名を変更してください。
+WAFSecuredHost=webNN.block.ocitutorials.tk
+
+# Path for vulnerability test
+VulnerabilityPath=vulnerability_path
+
+# Language
+Language=JA
