@@ -6,6 +6,7 @@ variable "domain" {}
 variable "uri_prefix" {}
 variable "precreated_waf_subdomain" {}
 variable "lab_waf_subdomain" {}
+variable "webserver_ip" {}
 
 locals {
   converted_domain = replace(var.domain, ".", "-")
@@ -25,7 +26,7 @@ resource "oci_dns_record" "a_records" {
   domain          = "${var.uri_prefix}${count.index}.${var.domain}"
   rtype           = "A"
   compartment_id  = "${var.compartment_id}"
-  rdata           = "140.238.60.141"
+  rdata           = "${var.webserver_ip}"
   ttl             = 30
 }
 
@@ -226,12 +227,12 @@ resource "oci_waas_waas_policy" "waas_policies" {
     }
     js_challenge {
       #Required
-      is_enabled = true
+      is_enabled = false
+      /*
       #Optional
       action = "BLOCK"
       action_expiration_in_seconds = 60
       failure_threshold = 10
-      /*
       challenge_settings {
         Optional
         block_action = "${var.waas_policy_waf_config_js_challenge_challenge_settings_block_action}"

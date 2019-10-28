@@ -1,0 +1,8 @@
+# Edit following variables according to your lab envs
+compartment_id = "<your_compartment_ocid>"
+lab_count = 10
+domain = "example.com"
+uri_prefix = "web"
+precreated_waf_subdomain = "block"
+lab_waf_subdomain = "handson"
+webserver_ip = "1.2.3.4"
