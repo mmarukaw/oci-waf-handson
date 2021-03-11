@@ -1,0 +1,8 @@
+// Please edit following variables according to your lab env
+
+user_ocid="<your_user_ocid>"
+fingerprint="<your_api_pem_key's_fingerprint>"
+private_key_path="<your_api_private_key_path>"
+tenancy_ocid="<your_tenancy_ocid>"
+region="<your_region>"
+
